@@ -1,0 +1,121 @@
+it address important area where other frame work does not 
+it has layered architechtute 
+you can use any part of it in isolation 
+it is very easy to incorporate spring in existing  project
+ideal framework from test driven project
+spring is an opensource project  since feb 2002-2003
+it is published in the book expert one on one 
+by rod johnson
+
+released under apache 2.0 license 
+
+milestone releaase 1.0 ros339485
+
+ioc 
+its an object oriented programming practice 
+where by an object coupling is bound at the run time by an assembler object and typically 
+not known at compile time using static analysis
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+What is Spring?
+Spring is great framework for development of Enterprise grade applications. 
+Spring is a light-weight framework for the development of enterprise-ready applications. 
+It provides very simple and rich facilities to integrate various frameworks, technologies, and services in the applications. 
+One of the main reason for using the Spring framework is to keep code as simple as possible.
+ It push the way to develop enterprise applications with loosely coupled simple java beans. For this reason, the spring framework can also be called a Plain Old Java Object (POJO) framework.
+
+Spring is an open-source framework developed by Spring Source, a division of VMware. Spring frame work can summarized in two ways.
+
+Container-Spring framework can be described as a light weight container, as it does not involve installation, configuration, start and stop activities associated with a container. It is just a simple collection of few Java ARchive (JAR) files that need to be added to the classpath. The Spring Container takes the classes in the application, creates objects, and manages the life cycle of those objects.
+
+Framework-Spring framework can be described as an Application Programming Interface(API) containing  a large collection of the classes, methods, interfaces, annotations, XML tags that can be used in an application. The API provides a variety of factory and facade classes that help you to use any framework or functionality very easily in 
+your application.
+
+////////////////
+
+
+Core Spring Framework: The Core package is the most fundamental part of the framework and provides the IoC and Dependency Injection features. The basic concept here is the BeanFactory, which provides a sophisticated implementation of the factory pattern which removes the need for programmatic singletons and allows you to decouple the configuration and specification of dependencies from your actual program logic. 
+
+
+Spring's MVC:  Spring MVC package provides a Model-View-Controller (MVC) implementation for web-applications. Spring's MVC framework is not just any old implementation; it provides a clean separation between domain model code and web forms, and allows you to use all the other features of the Spring Framework.
+
+
+your application.
+
+////////////////////////
+
+Spring Setter Injection is nothing but injecting the Bean Dependencies using the Setter methods on an Object. Unlike Spring Constructor Injection, in Setter Injection, the object is created first and then the dependency is injected.
+
+It is a type of Spring Dependency Injection, where object’s constructor is used to inject dependencies. This type of injection is safer as the objects won’t get created if the dependencies aren’t available or dependencies cannot be resolved.
+
+coupling:
+in object oriented software devlopment it allow us to change the implementations of two releated objects without affecting the other object
+////////////////////////////////////////////////////////////
+autowireing 
+no	It is default which define no autowiring.
+//
+byName	Autowiring is done by property name. Spring container looks at the properties of the beans on which autowire attribute is set to byName in the XML configuration file. It then tries to match and wire its properties with the beans defined by the same names in the configuration file.
+//
+byType	Autowiring is done by matching data type of property name. Spring container looks at the properties of the beans on which autowire attribute is set to byType in the XML configuration file. It then tries to match and wire a property if its type matches with exactly one of the beans name in configuration file. If more than one such beans exists, a fatal exception is thrown.
+//
+constructor	Autowiring is done by matching data type of property name with the property constructor argument. i.e. Similar to byType, but type applies to constructor arguments. If there is not exactly one bean of the constructor argument type in the container, a fatal error is raised.
+//
+autodetect	When default constructor with no argument, it auto-wire by data type or it auto-wire by constructor means that Spring first tries to wire using autowire by constructor, if it does not work, Spring tries to autowire by byType..
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+here are different tags are using by these different Collection elements as follows:
+List  -- using-- <list> - </list>
+Set   -- using-- <set> - </set>
+Map -- using-- <map> - </map>
+Properties----------<props> <prop> </prop></props>
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Spring bean scopes
+The scope of a bean specifies what kind of object has to be created by container for the bean defined.
+
+We can define the scope of the bean while defining the bean in the spring configuration file.
+
+Spring provides 5 scopes for a bean out of the box, we can also customize and create custom scope.
+
+Types of bean scopes supported by Spring out of the box are as below
+
+1. Singleton
+Return a single bean instance per Spring container
+
+2. Prototype
+Return a new bean instance each time when requested for the container
+
+3. Request
+Return a single bean instance per HTTP request and Only valid in the context of a web-aware Spring ApplicationContext which means only in the web application.
+
+4. Session
+Return a single bean instance per HTTP session and Only valid in the context of a web-aware Spring ApplicationContext which means only in the web application.
+
+5. GlobalSession
+Return a single bean instance per global HTTP session
+In portlet applications, session scope is considered as global session scope.
+Hence only valid when used in a portlet context
+
+Note:
+By default, all the beans defined in spring will have singleton scope.
+
+///////////////////
+
+Spring bean inheritance
+In java, we have already seen the benefit of inheritance which is Reusability.
+
+That is, if we have some properties in the base class then child class will inherit those properties and its values.
+
+We can also override those values in the Child class.
+
+Similarly in Spring, we can inherit the beans properties and its values and we can also override them.
+
+/////////////////
+BeanPostProcessor: A BeanPostProcessor gives you a chance to process an instance of a bean created by the IoC container after it's instantiation and then again after the initialization life cycle event has occurred on the instance. You could use this to process fields that were set, perform validation on a bean, or even look up values from a remote resource to set on the bean as defaults.
+
+BeanPostProcessor interface has two method...
+1. postProcessAfterInitialization(Object bean, String beanName) execute after initialization of each beans in the Spring IoC Container.
+2. postProcessBeforeInitialization(Object bean, String beanName) execute before initialization of each beans in the Spring IoC Container.
+classname
+
+
+
